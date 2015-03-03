@@ -1,4 +1,5 @@
 
-<%= form_tag({:controller => "registration", :action => "search"}, :method => "get") %>
-  <input id ="e" name="e" type="text" placeholder="Email">
-<input name="commit" type="submit" value="Search" />
+<%= form_tag({:controller => "registration", :action => "search"}, :method => "get") do %>
+  <%= text_field :registration, :email %>
+  <%= submit_tag "Submit" %>
+<% end %>
