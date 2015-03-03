@@ -1,5 +1,18 @@
 
 <%= form_tag({:controller => "registration", :action => "search"}, :method => "get") do %>
-  <%= text_field :registration, :email %>
-  <%= submit_tag "Submit" %>
+  <p>
+    <%= label_tag "Email" %>
+    <%= text_field :registration, :email %>
+  </p>
+  <p>
+    <%= label_tag "Username" %>
+    <%= text_field :registration, :username %>
+  </p>
+  <p>
+    <%= label_tag "Password" %>
+    <%= password_field_tag :registration, :password %>
+  </p>
+  <p>
+    <%= submit_tag "Submit" %>
+  </p>
 <% end %>
