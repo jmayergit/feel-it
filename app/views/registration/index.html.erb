@@ -1,6 +1,4 @@
 
-<% if @status["isRegistered"]== 0 %>
-  Not registered!
-<% else %>
-  Registered!
-<% end %>
+<%= form_tag({:controller => "registration", :action => "search"}, :method => "get") %>
+  <input id ="e" name="e" type="text" placeholder="Email">
+<input name="commit" type="submit" value="Search" />
