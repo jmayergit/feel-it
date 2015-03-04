@@ -33,6 +33,41 @@
   font-family: 'Trebuchet MS';
 }
 
+
+.field {
+  background-color: rgba(255,255,255,0.14);
+  border: 1px solid white;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 300px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  color: white;
+  font-family: 'trebuchet MS';
+}
+
+.tos {
+  line-height: 10px;
+  font-size: 9pt;
+  font-family: 'Trebuchet MS';
+  margin-top: 20px;
+  opacity: .8;
+}
+
+ #register {
+  background-color: rgba(255,255,255,0.75);
+  color: rgb(155,127,152);
+  border: none;
+  border-radius: 10px;
+  width: 300px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  margin-bottom: 15px;
+  margin-top: 12px;
+  font-family: 'trebuchet MS'
+}
+
 .hr {
   height: 3px;
   width: 300px;
@@ -45,6 +80,13 @@
   opacity: .7;
   font-family: 'Trebuchet MS';
   font-size: 9pt;
+}
+
+#app_buttons .img-responsive {
+  width: 142px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #registration_email {
@@ -100,45 +142,4 @@
 
 .password_red {
   background-image: url(password_red.png);
-}
-
-.field {
-  background-color: rgba(255,255,255,0.14);
-  border: 1px solid white;
-  border-radius: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 300px;
-  margin-top: 18px;
-  margin-bottom: 18px;
-  color: white;
-  font-family: 'trebuchet MS';
-}
-
-.tos {
-  line-height: 10px;
-  font-size: 9pt;
-  font-family: 'Trebuchet MS';
-  margin-top: 20px;
-  opacity: .8;
-}
-
- #register {
-  background-color: rgba(255,255,255,0.75);
-  color: rgb(155,127,152);
-  border: none;
-  border-radius: 10px;
-  width: 300px;
-  padding-top: 11px;
-  padding-bottom: 11px;
-  margin-bottom: 15px;
-  margin-top: 12px;
-  font-family: 'trebuchet MS'
-}
-
-#app_buttons .img-responsive {
-  width: 142px;
-  display: inline-block;
-  margin-left: 10px;
-  margin-right: 10px;
 }
