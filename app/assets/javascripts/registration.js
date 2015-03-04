@@ -56,17 +56,26 @@ $(document).ready(function(){
   });
 
   $("#registration").on('blur', function(){
-    var password = $('registration').val();
+    var password = $('#registration').val();
     var enc_password = window.btoa(password);
-    $.ajax("/middleman/?password=" + enc_password).done(function(response){
-      var valid = response["isValid"];
-      console.log(valid);
-      if(valid == 0){
-        console.log("Password Contains Invalid Characters");
-      } else {
-        console.log("Valid");
-      }
-    });
+    if (password === "") {
+      $("#registration").removeClass("password_blue");
+      $("#registration").removeClass("password_red");
+      $("#registration").addClass("password_white");
+    }else {
+      $.ajax("/middleman/?password=" + enc_password).done(function(response){
+        var valid = response["isValid"];
+        if(valid == 0){
+          $("#registration").removeClass("password_white");
+          $("#registration").removeClass("password_blue");
+          $("#registration").addClass("password_red");
+        } else {
+          $("#registration").removeClass("password_white");
+          $("#registration").removeClass("password_red");
+          $("#registration").addClass("password_blue");
+        }
+      });
+    }
   });
 
 });
