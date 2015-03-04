@@ -22,6 +22,7 @@
       <p class="text-center">
         <%= form_tag({:controller => "registration", :action => "search"}, :class => "form-horizantal", :method => "get") do %>
         <center>
+<<<<<<< HEAD
           <div class="form group">
             <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "username" %>
           </div>
@@ -41,6 +42,27 @@
           <p>
             2015 © Feelit, Inc. All rights reserved.
           </p>
+=======
+        <div class="form group">
+          <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "username" %>
+        </div>
+        <p></p>
+        <div class="form group">
+          <%= password_field_tag :registration, :password, class: "field form-control password_white", :placeholder => "password" %>
+        </div>
+        <p></p>
+        <div class="form group">
+          <%= text_field :registration, :email, class: "field form-control email_white", :placeholder =>"email"%>
+        </div>
+        <p></p>
+        <div class="form group">
+          <%= submit_tag "Register", id: "register"%>
+        </div>
+      </center>
+        <p></p>
+        <p>
+          2015 © Feelit, Inc. All rights reserved.
+        </p>
         <% end %>
         <div id="app_buttons">
           <center>
