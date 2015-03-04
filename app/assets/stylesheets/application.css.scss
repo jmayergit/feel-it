@@ -18,6 +18,7 @@
 
 
  body {
+   margin-top: 50px;
    background: url(background.jpg) no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
@@ -29,7 +30,7 @@
 #registration_email {
   background-size: contain;
   background-repeat: no-repeat;
-  padding-left: 40px;
+  padding-left: 50px;
 }
 
 .email_white {
@@ -40,14 +41,14 @@
   background-image: url(email_blue.png);
 }
 
-.email_blue {
+.email_red {
   background-image: url(email_red.png);
 }
 
 #registration_username {
   background-size: contain;
   background-repeat: no-repeat;
-  padding-left: 40px;
+  padding-left: 50px;
 }
 
 .username_white {
@@ -65,7 +66,7 @@
 #registration {
   background-size: contain;
   background-repeat: no-repeat;
-  padding-left: 40px;
+  padding-left: 50px;
 }
 
 .password_white {
@@ -83,20 +84,22 @@
 .field {
   background-color: rgba(255,255,255,0.14);
   border: 1px solid white;
-  border-radius: 6px;
+  border-radius: 8px;
   padding-top: 20px;
   padding-bottom: 20px;
   width: 300px;
+  margin-top: 17px;
+  margin-bottom: 17px;
 }
 
  #register {
   background-color: rgba(255,255,255,0.75);
   color: rgb(155,127,152);
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   width: 300px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 11px;
+  padding-bottom: 11px;
 }
 
 #app_buttons .img-responsive {

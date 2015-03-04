@@ -36,15 +36,19 @@
         <div class="form group">
           <%= submit_tag "Register", id: "register"%>
         </div>
-        <p></p>
+      </center>
         <p>
           2015 © Feelit, Inc. All rights reserved.
         </p>
-      </center>
-      <% end %>
+    </center>
+    <% end %>
       <div id="app_buttons">
-        <%= image_tag("/assets/ios-button.png", :class => "img-responsive inline-block") %><%= image_tag("/assets/android-button.png", :class => "img-responsive inline-block") %>
+        <center>
+          <p><%= image_tag("/assets/ios-button.png", :class => "img-responsive", id:"ios") %><%= image_tag("/assets/android-button.png", :class => "img-responsive", id:"android") %></p>
+        </center>
       </div>
+    </div>
+    <div class="col-md-4">
     </div>
   </div>
 </div>
