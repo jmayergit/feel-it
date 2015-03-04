@@ -23,3 +23,57 @@
    -o-background-size: cover;
    background-size: cover;
  }
+
+#registration_email {
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+}
+
+.email_white {
+  background-image: url(email_white.png);
+}
+
+.email_blue {
+  background-image: url(email_blue.png);
+}
+
+.email_blue {
+  background-image: url(email_red.png);
+}
+
+#registration_username {
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+}
+
+.username_white {
+  background-image: url(username_white.png);
+}
+
+.username_blue {
+  background-image: url(username_blue.png);
+}
+
+.username_red {
+  background-image: url(username_red.png);
+}
+
+#registration {
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+}
+
+.password_white {
+  background-image: url(password_white.png);
+}
+
+.password_blue {
+  background-image: url(password_blue.png);
+}
+
+.password_red {
+  background-image: url(password_red.png);
+}
