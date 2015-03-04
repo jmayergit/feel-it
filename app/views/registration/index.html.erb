@@ -19,7 +19,6 @@
     <div class="col-md-4">
     </div>
     <div class="col-md-4">
-      <%= form_tag({:controller => "registration", :action => "search"}, :class => "form-horizantal", :method => "get") do %>
       <center>
         <div class="form group">
           <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "Username" %>
@@ -30,9 +29,15 @@
         </div>
         <p></p>
         <div class="form group">
-          <%= text_field :registration, :email, class: "field form-control email_white", :placeholder =>"Email"%>
+          <%= text_field :registration, :email, class: "field form-control email_white", :placeholder =>"Email", :autocomplete => "off"%>
         </div>
         <p></p>
+        <center>
+        <div class="tos">
+          <p>By registering I agree to the</p>
+          <p><strong>Terms of Service</strong> and <strong>Privacy Policy</strong></p>
+        </div>
+        </center>
         <div class="form group">
           <%= submit_tag "Register", id: "register"%>
         </div>
@@ -46,10 +51,9 @@
         </p>
         </center>
     </center>
-    <% end %>
       <div id="app_buttons">
         <center>
-          <p><%= image_tag("/assets/ios-button.png", :class => "img-responsive", id:"ios") %><%= image_tag("/assets/android-button.png", :class => "img-responsive", id:"android") %></p>
+          <p><%= link_to image_tag("/assets/ios-button.png", :class => "img-responsive", id:"ios"), "https://itunes.apple.com/us/app/feelit/id684671984?mt=8" %><%= link_to image_tag("/assets/android-button.png", :class => "img-responsive", id:"android"), "https://play.google.com/store/apps/details?id=com.feelit.feelit" %></p>
         </center>
       </div>
     </div>
