@@ -16,10 +16,25 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
  body {
    background: url(background.jpg) no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
    background-size: cover;
+   color: white;
  }
+
+.field {
+  background-color: rgba(255,255,255,0.14);
+  border: 1px solid white;
+  border-radius: 6px;
+}
+
+ #register {
+  background-color: rgba(255,255,255,0.75);
+  color: rgb(155,127,152);
+  border: none;
+  border-radius: 6px;
+}
