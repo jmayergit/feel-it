@@ -12,18 +12,18 @@ $(document).ready(function(){
         var registered = response["isRegistered"];
         if(registered === 0){
           $("#registration_username").removeClass("username_white");
-          $("#registration_username").removeClass("username_blue");
-          $("#registration_username").addClass("username_red");
-        }else {
-          $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_red");
           $("#registration_username").addClass("username_blue");
+        }else {
+          $("#registration_username").removeClass("username_white");
+          $("#registration_username").removeClass("username_blue");
+          $("#registration_username").addClass("username_red");
         }
       });
     }else {
       $("#registration_username").removeClass("username_white");
-      $("#registration_username").removeClass("username_blue");
-      $("#registration_username").addClass("username_red");
+      $("#registration_username").removeClass("username_red");
+      $("#registration_username").addClass("username_blue");
     }
   });
 
@@ -40,18 +40,18 @@ $(document).ready(function(){
         var registered = response["isRegistered"];
         if(registered === 0){
           $("#registration_email").removeClass("email_white");
-          $("#registration_email").removeClass("email_blue");
-          $("#registration_email").addClass("email_red");
-        }else {
-          $("#registration_email").removeClass("email_white");
           $("#registration_email").removeClass("email_red");
           $("#registration_email").addClass("email_blue");
+        }else {
+          $("#registration_email").removeClass("email_white");
+          $("#registration_email").removeClass("email_blue");
+          $("#registration_email").addClass("email_red");
         }
       });
     }else {
       $("#registration_email").removeClass("email_white");
-      $("#registration_email").removeClass("email_blue");
-      $("#registration_email").addClass("email_red");
+      $("#registration_email").removeClass("email_red");
+      $("#registration_email").addClass("email_blue");
     }
   });
 
