@@ -9,7 +9,7 @@
       <p class="text-center">
         <%= image_tag("/assets/logo.png") %>
       </p>
-      <p class="text-center">
+      <p class="text-center" id="welcome">
         Welcome! Join Feelit now
       </p>
     </div>
@@ -36,10 +36,15 @@
         <div class="form group">
           <%= submit_tag "Register", id: "register"%>
         </div>
+        <center><div class="hr"><hr /></div></center>
+        
       </center>
-        <p>
+
+        <center>
+          <p class="copyright">
           2015 © Feelit, Inc. All rights reserved.
         </p>
+        </center>
     </center>
     <% end %>
       <div id="app_buttons">
