@@ -22,22 +22,28 @@
       <%= form_tag({:controller => "registration", :action => "search"}, :class => "form-horizantal", :method => "get") do %>
       <center>
         <div class="form group">
-          <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "username" %>
+          <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "Username" %>
         </div>
         <p></p>
         <div class="form group">
-          <%= password_field_tag :registration, :password, class: "field form-control password_white", :placeholder => "password" %>
+          <%= password_field_tag :registration, :password, class: "field form-control password_white", :placeholder => "Password" %>
         </div>
         <p></p>
         <div class="form group">
-          <%= text_field :registration, :email, class: "field form-control email_white", :placeholder =>"email"%>
+          <%= text_field :registration, :email, class: "field form-control email_white", :placeholder =>"Email"%>
         </div>
         <p></p>
+        <center>
+        <div class="tos">
+          <p>By registering I agree to the</p>
+          <p><strong>Terms of Service</strong> and <strong>Privacy Policy</strong></p>
+        </div>
+        </center>
         <div class="form group">
           <%= submit_tag "Register", id: "register"%>
         </div>
         <center><div class="hr"><hr /></div></center>
-        
+
       </center>
 
         <center>
