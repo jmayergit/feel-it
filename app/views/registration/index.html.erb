@@ -8,6 +8,8 @@
     <div class="col-md-12">
       <p class="text-center">
         <%= image_tag("/assets/logo.png") %>
+      </p>
+      <p class="text-center">
         Welcome! Join Feelit now
       </p>
     </div>
@@ -16,9 +18,10 @@
   <div class="row">
     <div class="col-md-4">
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <p class="text-center">
         <%= form_tag({:controller => "registration", :action => "search"}, :class => "form-horizantal", :method => "get") do %>
+        <center>
         <div class="form group">
           <%= text_field :registration, :username, class: "field form-control", :placeholder => "username" %>
         </div>
@@ -34,6 +37,7 @@
         <div class="form group">
           <%= submit_tag "Register", id: "register"%>
         </div>
+      </center>
         <p></p>
         2015 © Feelit, Inc. All rights reserved.
         <% end %>
