@@ -2,18 +2,28 @@ $(document).ready(function(){
   $("#registration_username").on ('blur', function(){
     var username = $('#registration_username').val();
     var re = /^[\w_]+[\w._]*[\w_]$/;
-    if (re.test(username)){
+    if (username === "") {
+      $("#registration_username").removeClass("username_blue")
+      $("#registration_username").removeClass("username_red")
+      $("#registration_username").addClass("username_white")
+    } else if (re.test(username)){
       var enc_username = window.btoa(username);
       $.ajax("/middleman/?username=" + enc_username).done(function(response){
         var registered = response["isRegistered"];
         if(registered === 0){
-          console.log("Not registered!");
+          $("#registration_username").removeClass("username_white")
+          $("#registration_username").removeClass("username_blue")
+          $("#registration_username").addClass("username_red")
         }else {
-          console.log("Registered!");
+          $("#registration_username").removeClass("username_white")
+          $("#registration_username").removeClass("username_red")
+          $("#registration_username").addClass("username_blue")
         }
       });
     } else {
-      console.log("Username is not valid");
+      $("#registration_username").removeClass("username_white")
+      $("#registration_username").removeClass("username_blue")
+      $("#registration_username").addClass("username_red")
     }
   });
 

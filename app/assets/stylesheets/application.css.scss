@@ -26,6 +26,60 @@
    color: white;
  }
 
+#registration_email {
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+.email_white {
+  background-image: url(email_white.png);
+}
+
+.email_blue {
+  background-image: url(email_blue.png);
+}
+
+.email_blue {
+  background-image: url(email_red.png);
+}
+
+#registration_username {
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+.username_white {
+  background-image: url(username_white.png);
+}
+
+.username_blue {
+  background-image: url(username_blue.png);
+}
+
+.username_red {
+  background-image: url(username_red.png);
+}
+
+#registration {
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+.password_white {
+  background-image: url(password_white.png);
+}
+
+.password_blue {
+  background-image: url(password_blue.png);
+}
+
+.password_red {
+  background-image: url(password_red.png);
+}
+
 .field {
   background-color: rgba(255,255,255,0.14);
   border: 1px solid white;
@@ -43,6 +97,10 @@
   width: 300px;
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+#app_buttons .img-responsive {
+  max-width: 40%;
 }
 
 #app_buttons .img-responsive {
