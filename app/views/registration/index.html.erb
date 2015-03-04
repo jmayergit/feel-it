@@ -1,4 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <p></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p class="text-center">
+        <%= image_tag("/assets/logo.png") %>
+        Welcome! Join Feelit now
+      </p>
+    </div>
+  </div>
 
+<<<<<<< HEAD
 <%= form_tag({:controller => "registration", :action => "search"}, :method => "get") do %>
   <p>
     <%= text_field :registration, :email, class: "email_white" %>
@@ -13,3 +28,36 @@
     <%= submit_tag "Submit" %>
   </p>
 <% end %>
+=======
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-3">
+      <p class="text-center">
+        <%= form_tag({:controller => "registration", :action => "search"}, :class => "form-horizantal", :method => "get") do %>
+        <div class="form group">
+          <%= text_field :registration, :username, class: "field form-control", :placeholder => "username" %>
+        </div>
+        <p></p>
+        <div class="form group">
+          <%= password_field_tag :registration, :password, class: "field form-control", :placeholder => "password" %>
+        </div>
+        <p></p>
+        <div class="form group">
+          <%= text_field :registration, :email, class: "field form-control", :placeholder =>"email"%>
+        </div>
+        <p></p>
+        <div class="form group">
+          <%= submit_tag "Register", id: "register"%>
+        </div>
+        <p></p>
+        2015 © Feelit, Inc. All rights reserved.
+        <% end %>
+        <%= image_tag("/assets/ios-button.png") %><%= image_tag("/assets/android-button.png") %>
+      </p>
+    </div>
+    <div class="col-md-5">
+    </div>
+  </div>
+<div>
+>>>>>>> e48f4c6f0a3874dff704336334904c35745182b7

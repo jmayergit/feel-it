@@ -16,14 +16,17 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
  body {
    background: url(background.jpg) no-repeat center center fixed;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
    background-size: cover;
+   color: white;
  }
 
+<<<<<<< HEAD
 #registration_email {
   background-size: contain;
   background-repeat: no-repeat;
@@ -76,4 +79,17 @@
 
 .password_red {
   background-image: url(password_red.png);
+=======
+.field {
+  background-color: rgba(255,255,255,0.14);
+  border: 1px solid white;
+  border-radius: 6px;
+}
+
+ #register {
+  background-color: rgba(255,255,255,0.75);
+  color: rgb(155,127,152);
+  border: none;
+  border-radius: 6px;
+>>>>>>> e48f4c6f0a3874dff704336334904c35745182b7
 }
