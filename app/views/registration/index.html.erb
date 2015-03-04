@@ -2,18 +2,22 @@
   <div class="row">
     <div class="col-md-12">
       <p class="text-center">
+        <%= image_tag("/assets/logo.png") %>
+        Welcome! Join Feelit now
         <%= form_tag({:controller => "registration", :action => "search"}, :class => "form-vertical", :method => "get") do %>
         <div class="form group">
-          <%= text_field :registration, :email %>
+          <%= text_field :registration, :username, class: "field", :placeholder => "username" %>
         </div>
-          <%= text_field :registration, :username %>
+        <%= password_field_tag :registration, :password, class: "field", :placeholder => "password" %>
         <div class="form group">
-          <%= password_field_tag :registration, :password %>
+          <%= text_field :registration, :email, class: "field", :placeholder =>"email"%>
         </div>
         <div class="form group">
-          <%= submit_tag "Submit" %>
+          <%= submit_tag "Register", id: "register"%>
         </div>
+        2015 © Feelit, Inc. All rights reserved.
         <% end %>
+        <%= image_tag("/assets/ios-button.png") %><%= image_tag("/assets/android-button.png") %>
       </p>
     </div>
   </div>
