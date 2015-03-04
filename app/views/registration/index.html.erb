@@ -19,7 +19,6 @@
     <div class="col-md-4">
     </div>
     <div class="col-md-4">
-      <%= form_tag({:controller => "registration", :action => "search"}, :class => "form-horizantal", :method => "get") do %>
       <center>
         <div class="form group">
           <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "username" %>
@@ -42,9 +41,8 @@
           <p class="copyright">
           2015 © Feelit, Inc. All rights reserved.
         </p>
-      </center>
+        </center>
     </center>
-    <% end %>
       <div id="app_buttons">
         <center>
           <p><%= image_tag("/assets/ios-button.png", :class => "img-responsive", id:"ios") %><%= image_tag("/assets/android-button.png", :class => "img-responsive", id:"android") %></p>
