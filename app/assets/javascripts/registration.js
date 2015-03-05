@@ -82,6 +82,8 @@ $(document).ready(function(){
   $('#register').on('click', function(){
     if ($("#registration").hasClass("password_blue") && $("#registration_email").hasClass("email_blue") && $("#registration_username").hasClass("username_blue")) {
       console.log("all valid");
+    }else {
+      console.log("Not valid");
     }
   });
 
