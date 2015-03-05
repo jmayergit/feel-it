@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  var valid_registration = false;
   $("#registration_username").on ('blur', function(){
     var username = $('#registration_username').val();
     var re = /^[\w_]+[\w._]*[\w_]$/;
@@ -77,5 +78,12 @@ $(document).ready(function(){
       });
     }
   });
+
+  $('#register').on('click', function(){
+    if ($("#registration").hasClass("password_blue") && $("#registration_email").hasClass("email_blue") && $("#registration_username").hasClass("username_blue")) {
+      console.log("all valid");
+    }
+  });
+
 
 });
