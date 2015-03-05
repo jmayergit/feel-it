@@ -21,7 +21,7 @@
     <div class="col-md-4">
       <center>
         <div class="form group">
-          <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "Username" %>
+          <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "Username", :autocomplete => "off" %>
         </div>
         <p></p>
         <div class="form group">
@@ -53,7 +53,9 @@
     </center>
       <div id="app_buttons">
         <center>
-          <p><%= link_to image_tag("/assets/ios-button.png", :class => "img-responsive", id:"ios"), "https://itunes.apple.com/us/app/feelit/id684671984?mt=8" %><%= link_to image_tag("/assets/android-button.png", :class => "img-responsive", id:"android"), "https://play.google.com/store/apps/details?id=com.feelit.feelit" %></p>
+          <p><%= link_to image_tag("/assets/ios-button.png", :class => "img-responsive", id:"ios"), "https://itunes.apple.com/us/app/feelit/id684671984?mt=8" %>
+            <%= link_to image_tag("/assets/android-button.png", :class => "img-responsive", id:"android"), "https://play.google.com/store/apps/details?id=com.feelit.feelit" %>
+          </p>
         </center>
       </div>
     </div>

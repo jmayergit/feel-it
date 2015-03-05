@@ -22,8 +22,8 @@ $(document).ready(function(){
       });
     }else {
       $("#registration_username").removeClass("username_white");
-      $("#registration_username").removeClass("username_red");
-      $("#registration_username").addClass("username_blue");
+      $("#registration_username").removeClass("username_blue");
+      $("#registration_username").addClass("username_red");
     }
   });
 
@@ -50,8 +50,8 @@ $(document).ready(function(){
       });
     }else {
       $("#registration_email").removeClass("email_white");
-      $("#registration_email").removeClass("email_red");
-      $("#registration_email").addClass("email_blue");
+      $("#registration_email").removeClass("email_blue");
+      $("#registration_email").addClass("email_red");
     }
   });
 
