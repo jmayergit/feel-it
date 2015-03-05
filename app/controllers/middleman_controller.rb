@@ -26,10 +26,9 @@ class MiddlemanController < ApplicationController
     password = params["password"]
     email = params["email"]
     response = RestClient.post "http://gfeelitdev.elasticbeanstalk.com/registeruser/", {:email => email, :password => password, :username => username}
-    result = JSON.parse(response.body)
-      binding-pry
-      cookies[:access_key] = result.access_key
-      cookies[:user_id] = result.user_id
+    @result = JSON.parse(response.body)
+      cookies[:access_key] = @result["access_key"]
+      cookies[:user_id] = @result["Id"]
 
     redirect_to facebook_path
   end
