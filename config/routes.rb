@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'registration/search' => 'registration#search', as: :search
 
   get 'middleman' => 'middleman#load'
+
+  get 'middleman/register' => 'middleman#register'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

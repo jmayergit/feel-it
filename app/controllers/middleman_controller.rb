@@ -20,4 +20,19 @@ class MiddlemanController < ApplicationController
     end
   end
 
+  def register
+    username = params["username"]
+    password = params["password"]
+    email = params["email"]
+    response = RestClient.post "http://gfeelitdev.elasticbeanstalk.com/registeruser/", {:email => email, :password => password, :username => username}
+    puts response
+    puts response
+    puts response
+    puts response
+    puts response
+    puts response
+    puts response
+    puts response
+  end
+
 end

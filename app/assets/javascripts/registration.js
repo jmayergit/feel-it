@@ -83,10 +83,13 @@ $(document).ready(function(){
   });
 
   $('#register').on('click', function(){
+    var username = window.btoa($('#registration_username').val());
+    var password = window.btoa($('#registration').val());
+    var email = window.btoa($('#registration_email').val());
     if ($("#registration").hasClass("password_blue") && $("#registration_email").hasClass("email_blue") && $("#registration_username").hasClass("username_blue")) {
-      console.log("all valid");
+      $.ajax("/middleman/register?username=" + username + "&password=" + password + "&email=" + email)
     }else {
-      console.log("Not valid");
+      console.log("Not all valid");
     }
   });
 });
