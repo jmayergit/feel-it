@@ -7,11 +7,8 @@ class RegistrationController < ApplicationController
 
   end
 
-  def search
-    email = params[:registration][:email].downcase
-    enc_email = Base64.encode64(email)
-    @response = RestClient.post "http://gfeelitdev.elasticbeanstalk.com/checkemail/", {:email => enc_email}
-    @status = JSON.parse(@response.body)
+  def facebook
+
   end
 
 end

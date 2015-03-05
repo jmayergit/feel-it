@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'registration#index'
 
-  get 'registration/search' => 'registration#search', as: :search
+  get 'registration/facebook' => 'registration#facebook', as: :facebook
 
   get 'middleman' => 'middleman#load'
 

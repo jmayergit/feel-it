@@ -1,3 +1,4 @@
+require 'pry'
 class MiddlemanController < ApplicationController
 
   def load
@@ -25,14 +26,12 @@ class MiddlemanController < ApplicationController
     password = params["password"]
     email = params["email"]
     response = RestClient.post "http://gfeelitdev.elasticbeanstalk.com/registeruser/", {:email => email, :password => password, :username => username}
-    puts response
-    puts response
-    puts response
-    puts response
-    puts response
-    puts response
-    puts response
-    puts response
+    result = JSON.parse(response.body)
+      binding-pry
+      cookies[:access_key] = result.access_key
+      cookies[:user_id] = result.user_id
+
+    redirect_to facebook_path
   end
 
 end

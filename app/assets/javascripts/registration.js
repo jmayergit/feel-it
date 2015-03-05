@@ -15,7 +15,6 @@ $(document).ready(function(){
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_red");
           $("#registration_username").addClass("username_blue");
-          valid_registration.push(1);
         }else {
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_blue");
@@ -76,7 +75,6 @@ $(document).ready(function(){
           $("#registration").removeClass("password_white");
           $("#registration").removeClass("password_red");
           $("#registration").addClass("password_blue");
-          valid_registration.push(1)
         }
       });
     }
@@ -87,7 +85,9 @@ $(document).ready(function(){
     var password = window.btoa($('#registration').val());
     var email = window.btoa($('#registration_email').val());
     if ($("#registration").hasClass("password_blue") && $("#registration_email").hasClass("email_blue") && $("#registration_username").hasClass("username_blue")) {
-      $.ajax("/middleman/register?username=" + username + "&password=" + password + "&email=" + email)
+      $.ajax("/middleman/register?username=" + username + "&password=" + password + "&email=" + email).done(function(){
+        console.log(response);
+      });
     }else {
       console.log("Not all valid");
     }
