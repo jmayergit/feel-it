@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var valid_registration = false;
+  var valid_registration = [];
   $("#registration_username").on ('blur', function(){
     var username = $('#registration_username').val();
     var re = /^[\w_]+[\w._]*[\w_]$/;
@@ -15,6 +15,7 @@ $(document).ready(function(){
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_red");
           $("#registration_username").addClass("username_blue");
+          valid_registration.push(1);
         }else {
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_blue");
@@ -43,6 +44,7 @@ $(document).ready(function(){
           $("#registration_email").removeClass("email_white");
           $("#registration_email").removeClass("email_red");
           $("#registration_email").addClass("email_blue");
+          valid_registration.push(1);
         }else {
           $("#registration_email").removeClass("email_white");
           $("#registration_email").removeClass("email_blue");
@@ -74,6 +76,7 @@ $(document).ready(function(){
           $("#registration").removeClass("password_white");
           $("#registration").removeClass("password_red");
           $("#registration").addClass("password_blue");
+          valid_registration.push(1)
         }
       });
     }
@@ -86,6 +89,4 @@ $(document).ready(function(){
       console.log("Not valid");
     }
   });
-
-
 });
