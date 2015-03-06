@@ -4,7 +4,9 @@ class RegistrationController < ApplicationController
   require 'base64'
 
   def index
-
+    if params[:r]
+      @username = params[:r]
+    end
   end
 
   def facebook
