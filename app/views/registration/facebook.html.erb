@@ -2,13 +2,26 @@
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '225234924323400',
+      appId      : '844214878979627',
       xfbml      : true,
       version    : 'v2.1'
     });
 
-    FB.getLoginStatus(function(response) {
-      console.log(response);
+    // checks login status when 'link to fb' button is clicked
+    $('#fb').on('click', function() {
+      FB.getLoginStatus(function(response) {
+        var status = response["status"]
+        console.log(status);
+        if(status === "connected"){
+          // Do this
+        }else if(status === "not_authorized") {
+          FB.login(function(response) {
+            console.log(response);
+          })
+        }else if(status === "unkown") [
+          // Do this
+        ]
+      })
     });
   };
 
@@ -51,7 +64,7 @@
     </div>
     <div class="col-md-4">
       <center>
-        <p><%= link_to image_tag("/assets/facebook_button.png", :class => "img-responsive", id:"fb"), "https://itunes.apple.com/us/app/feelit/id684671984?mt=8" %>
+        <p><%= link_to image_tag("/assets/facebook_button.png", :class => "img-responsive", id:"fb") %>
         <p class="text-center" id="or_use_now">
           Or start using Feelit now:
         </p>
