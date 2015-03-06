@@ -1,26 +1,4 @@
 
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '225234924323400',
-      xfbml      : true,
-      version    : 'v2.1'
-    });
-
-    FB.getLoginStatus(function(response) {
-      console.log(response);
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
@@ -33,14 +11,14 @@
         <%= image_tag("/assets/success_icon.png") %>
       </p>
       <p class="text-center" id="awesome">
-        Awesome! One last step:
+        Congrats!
       </p>
       <div class = "coins_prompt">
         <p class="text-center">
-          Link your Facebook account to earn
+          You just earned your 200 purple coins!
         </p>
         <p class="text-center">
-          your free <u>200 purple coins!</u>
+          You can start using Feelit now:
         </p>
       </div>
     </div>
@@ -51,10 +29,7 @@
     </div>
     <div class="col-md-4">
       <center>
-        <p><%= link_to image_tag("/assets/facebook_button.png", :class => "img-responsive", id:"fb"), "https://itunes.apple.com/us/app/feelit/id684671984?mt=8" %>
-        <p class="text-center" id="or_use_now">
-          Or start using Feelit now:
-        </p>
+
         <div id="app_buttons">
           <center>
             <p><%= link_to image_tag("/assets/ios-button.png", :class => "img-responsive", id:"fb_ios"), "https://itunes.apple.com/us/app/feelit/id684671984?mt=8" %>
