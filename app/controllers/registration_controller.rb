@@ -8,7 +8,8 @@ class RegistrationController < ApplicationController
   end
 
   def facebook
-
+    @access = cookies[:access_key]
+    @user_id = cookies[:user_id]
   end
 
 end
