@@ -1,2 +1,54 @@
-<%= @access %>
-<%= @user_id %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <p></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p class="text-center" id="success">
+        <%= image_tag("/assets/success_icon.png") %>
+      </p>
+      <p class="text-center" id="awesome">
+        Awesome! One last step:
+      </p>
+      <div class = "coins_prompt">
+        <p class="text-center">
+          Link your Facebook account to earn
+        </p>
+        <p class="text-center">
+          your free <u>200 purple coins!</u>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <center>
+        <p><%= link_to image_tag("/assets/facebook_button.png", :class => "img-responsive", id:"fb"), "https://itunes.apple.com/us/app/feelit/id684671984?mt=8" %>
+        <p class="text-center" id="or_use_now">
+          Or start using Feelit now:
+        </p>
+        <div id="app_buttons">
+          <center>
+            <p><%= link_to image_tag("/assets/ios-button.png", :class => "img-responsive", id:"fb_ios"), "https://itunes.apple.com/us/app/feelit/id684671984?mt=8" %>
+              <%= link_to image_tag("/assets/android-button.png", :class => "img-responsive", id:"fb_android"), "https://play.google.com/store/apps/details?id=com.feelit.feelit" %>
+            </p>
+          </center>
+        </div>
+        <center><div class="hr"><hr /></div></center>
+        <center>
+          <p class="copyright">
+          2015 © Feelit, Inc. All rights reserved.
+        </p>
+        </center>
+    </center>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>

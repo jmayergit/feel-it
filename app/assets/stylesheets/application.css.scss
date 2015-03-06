@@ -181,7 +181,6 @@ a:visited {
 
 .password_white {
   background-image: url(password_white.png);
-
 }
 
 .password_blue {
@@ -190,4 +189,38 @@ a:visited {
 
 .password_red {
   background-image: url(password_red.png);
+}
+
+#success {
+  margin-top: 70px;
+  margin-bottom: 15px;
+}
+
+#awesome {
+  font-family: 'trebuchet MS';
+  font-size: 22pt;
+}
+
+.coins_prompt {
+  font-family: 'trebuchet MS';
+  font-size:14pt;
+  margin-bottom: 23px;
+}
+
+#fb {
+  width: 290px;
+}
+
+#or_use_now {
+  font-family: 'trebuchet MS';
+  font-size: 12pt;
+  margin-top: 20px;
+}
+
+#fb_ios {
+  margin-bottom: -8px;
+}
+
+#fb_android {
+  margin-bottom: -8px;
 }
