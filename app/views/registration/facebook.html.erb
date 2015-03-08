@@ -12,8 +12,14 @@
         url: "/registration/facebook",
         data: {authData: response["authResponse"]},
         success: function(data, textStatus, jqXHR){
+          console.log("sucessful yessful nosome woesome");
           console.log(data);
-          // window.
+          var isValid = data["isValid"]
+          if(isValid === '0') {
+            window.location.href=('/registration/already_linked')
+          }else{
+            window.location.href=('/registration/congrats')
+          };
         }
       })
     }else if(status === "not_authorized") {
@@ -41,9 +47,12 @@
       version    : 'v2.1'
     });
 
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
+    $('#fb').on('click', function() {
+      console.log("click");
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    })
 
   };
 
@@ -55,15 +64,6 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
-   $('#fb').on('click', function() {
-     FB.getLoginStatus(function(response) {
-       var status = response["status"];
-       console.log("You are");
-       console.log(status);
-       console.log(response);
-       statusChangeCallback(status);
-     });
-   })
 </script>
 
 <div class="container-fluid">
