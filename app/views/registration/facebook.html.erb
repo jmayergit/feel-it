@@ -1,5 +1,39 @@
 
 <script>
+  function statusChangeCallback(response) {
+    console.log(response);
+    var status = response["status"]
+    if(status === "connected") {
+      console.log("Happy Path");
+      // send request to controller
+
+      $.ajax({
+        type: "POST",
+        url: "/registration/facebook",
+        data: {authData: response["authResponse"]},
+        success: function(data, textStatus, jqXHR){
+          console.log(data);
+          // window.
+        }
+      })
+    }else if(status === "not_authorized") {
+      console.log("You are logged into FB but not our app son! Get yo self some koin.");
+      console.log("Loggin in..");
+      FB.login(function(response){
+        console.log("We are a go Houston.");
+        console.log(response);
+        statusChangeCallback(response);
+      });
+    }else if(status === "unknown") {
+      console.log("Shit fire, we dunno wut 2 dew w/ u");
+      console.log("Flash message: Not logged into FB, what do?");
+      FB.login(function(response) {
+        console.log("Houston we need to make an air filter hmfsicbtih");
+        console.log(response);
+      });
+    };
+  }
+
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '844214878979627',
@@ -7,22 +41,10 @@
       version    : 'v2.1'
     });
 
-    // checks login status when 'link to fb' button is clicked
-    $('#fb').on('click', function() {
-      FB.getLoginStatus(function(response) {
-        var status = response["status"]
-        console.log(status);
-        if(status === "connected"){
-          // Do this
-        }else if(status === "not_authorized") {
-          FB.login(function(response) {
-            console.log(response);
-          })
-        }else if(status === "unkown") [
-          // Do this
-        ]
-      })
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
     });
+
   };
 
   (function(d, s, id){
@@ -32,6 +54,16 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+   $('#fb').on('click', function() {
+     FB.getLoginStatus(function(response) {
+       var status = response["status"];
+       console.log("You are");
+       console.log(status);
+       console.log(response);
+       statusChangeCallback(status);
+     });
+   })
 </script>
 
 <div class="container-fluid">

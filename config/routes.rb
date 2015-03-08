@@ -3,9 +3,13 @@ Rails.application.routes.draw do
 
   get 'registration/facebook' => 'registration#facebook', as: :facebook
 
+  post 'registration/facebook' => 'registration#facebook'
+
   get 'registration/congrats' => 'registration#congrats', as: :congrats
 
   get 'registration/already_linked' => 'registration#already_linked', as: :already_linked
+
+  get 'registration/tokens' => 'registration#tokens'
 
 
   get 'middleman' => 'middleman#load'
