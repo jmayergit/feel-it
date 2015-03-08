@@ -1,4 +1,3 @@
-require 'pry'
 class MiddlemanController < ApplicationController
 
   def load
