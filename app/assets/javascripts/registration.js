@@ -1,35 +1,46 @@
 $(document).ready(function(){
+  var userNameError;
 
   function checkUsername(){
-    $('[data-toggle="tooltip"]').tooltip('show');
     var username = $('#registration_username').val();
-    var userLength = username.length;
     var re = /^[\w_]+[\w._]*[\w_]$/;
     if (username === ""){
       $("#registration_username").removeClass("username_blue");
       $("#registration_username").removeClass("username_red");
       $("#registration_username").addClass("username_white");
+      userNameError= 'Please enter a Username';
+    } else if(username.length >= 15) {
+      $("#registration_username").removeClass("username_white");
+      $("#registration_username").removeClass("username_blue");
+      $("#registration_username").addClass("username_red");
+      userNameError= 'Must be less than 16 characters';
     } else if (re.test(username)){
       var enc_username = window.btoa(username);
       $.ajax("/middleman/?username=" + enc_username).done(function(response){
         var registered = response["isRegistered"];
-        if(registered === 0 && userLength <= 15){
+        if(registered === 0){
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_red");
           $("#registration_username").addClass("username_blue");
+          userNameError = '';
         }else {
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_blue");
           $("#registration_username").addClass("username_red");
+          userNameError = 'Username is already taken';
         }
       });
-    }else {
+    } else {
       $("#registration_username").removeClass("username_white");
       $("#registration_username").removeClass("username_blue");
       $("#registration_username").addClass("username_red");
+      userNameError = 'Invalid characters';
     }
+    $('[data-name="username"]').attr('data-original-title', userNameError);
+    $('[data-name="username"]').tooltip('fixTitle');
   }
 
+  var emailError;
   function checkEmail(){
     var email = $('#registration_email').val();
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -37,6 +48,7 @@ $(document).ready(function(){
       $("#registration_email").removeClass("email_blue");
       $("#registration_email").removeClass("email_red");
       $("#registration_email").addClass("email_white");
+      emailError = 'Please enter an email';
     }else if(re.test(email)){
       var enc_email = window.btoa(email);
       $.ajax("/middleman/?email=" + enc_email).done(function(response){
@@ -45,19 +57,25 @@ $(document).ready(function(){
           $("#registration_email").removeClass("email_white");
           $("#registration_email").removeClass("email_red");
           $("#registration_email").addClass("email_blue");
+          emailError = '';
         }else {
           $("#registration_email").removeClass("email_white");
           $("#registration_email").removeClass("email_blue");
           $("#registration_email").addClass("email_red");
+          emailError = 'Email is already registered';
         }
       });
     }else {
       $("#registration_email").removeClass("email_white");
       $("#registration_email").removeClass("email_blue");
       $("#registration_email").addClass("email_red");
+      emailError = 'Not a valid email';
     }
+    $('[data-name="email"]').attr('data-original-title', emailError);
+    $('[data-name="email"]').tooltip('fixTitle');
   }
 
+  var passwordError;
   function checkPassword(){
     var password = $('#registration').val();
     var enc_password = window.btoa(password);
@@ -65,6 +83,7 @@ $(document).ready(function(){
       $("#registration").removeClass("password_blue");
       $("#registration").removeClass("password_red");
       $("#registration").addClass("password_white");
+      passwordError = "Please enter a password";
     } else {
       $.ajax("/middleman/?password=" + enc_password).done(function(response){
         var valid = response["isValid"];
@@ -72,10 +91,12 @@ $(document).ready(function(){
           $("#registration").removeClass("password_white");
           $("#registration").removeClass("password_blue");
           $("#registration").addClass("password_red");
+          passwordError = "Password contains invalid characters";
         } else {
           $("#registration").removeClass("password_white");
           $("#registration").removeClass("password_red");
           $("#registration").addClass("password_blue");
+          passwordError = "";
         }
       });
     }
@@ -110,7 +131,7 @@ $(document).ready(function(){
       });
       window.location.href='/registration/facebook';
     }else {
-      console.log("Not all valid");
+      $('[data-toggle="tooltip"]').tooltip('show');
     }
   });
 });
