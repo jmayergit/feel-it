@@ -26,7 +26,7 @@ class RegistrationController < ApplicationController
       if cookies[:ref_username]
         refUsername = Base64.encode64(cookies["ref_username"])
       else
-        refUsername = ZGVidWdfc2hydWc=
+        refUsername = "ZGVidWdfc2hydWc="
       end
       puts "REFUSERNAME"
       puts refUsername
