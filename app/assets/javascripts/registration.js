@@ -106,11 +106,9 @@ $(document).ready(function(){
     var email = window.btoa($('#registration_email').val());
     if ($("#registration").hasClass("password_blue") && $("#registration_email").hasClass("email_blue") && $("#registration_username").hasClass("username_blue")) {
       $.ajax("/middleman/register?username=" + username + "&password=" + password + "&email=" + email).done(function(response){
-        console.log(response);
       });
       window.location.href='/registration/facebook';
     }else {
-      console.log("Not all valid");
     }
   });
 });
