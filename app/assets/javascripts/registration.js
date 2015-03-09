@@ -1,5 +1,7 @@
 $(document).ready(function(){
-  
+
+  $('[data-toggle="tooltip"]').tooltip();
+
   function checkUsername(){
     var username = $('#registration_username').val();
     var re = /^[\w_]+[\w._]*[\w_]$/;

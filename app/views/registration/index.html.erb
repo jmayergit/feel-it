@@ -21,7 +21,8 @@
     <div class="col-md-4">
       <center>
         <div class="form group">
-          <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "Username", :autocomplete => "off" %>
+          <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "Username", :autocomplete => "off", :data => {toggle => "tooltip", placement => "right"} %>
+          <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
         </div>
         <p></p>
         <div class="form group">
