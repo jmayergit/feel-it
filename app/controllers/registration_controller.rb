@@ -23,11 +23,15 @@ class RegistrationController < ApplicationController
       userId = Base64.encode64(cookies["user_id"])
       puts "USERID"
       puts userId
-      refUsername = Base64.encode64(cookies["ref_username"])
+      if cookies[:ref_username]
+        refUsername = Base64.encode64(cookies["ref_username"])
+      else
+        refUsername = ZGVidWdfc2hydWc=
+      end
       puts "REFUSERNAME"
       puts refUsername
       # query linkfbid service
-      response = RestClient.post "http://gfeelitdev.elasticbeanstalk.com/linkfacebookid/", { user_id: userId, access_key: accessKey, facebookId: facebookId, ref_username: "ZGF2aWRkYW5n"}
+      response = RestClient.post "http://gfeelitdev.elasticbeanstalk.com/linkfacebookid/", { user_id: userId, access_key: accessKey, facebookId: facebookId, ref_username: refUsername}
       json = JSON.parse(response)
       render json: json
     else
