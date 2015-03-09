@@ -1,6 +1,6 @@
 $(document).ready(function(){
-  var userNameError;
 
+  var userNameError;
   function checkUsername(){
     var username = $('#registration_username').val();
     var re = /^[\w_]+[\w._]*[\w_]$/;
@@ -9,7 +9,7 @@ $(document).ready(function(){
       $("#registration_username").removeClass("username_red");
       $("#registration_username").addClass("username_white");
       userNameError= 'Please enter a Username';
-    } else if(username.length >= 15) {
+    } else if(username.length > 15) {
       $("#registration_username").removeClass("username_white");
       $("#registration_username").removeClass("username_blue");
       $("#registration_username").addClass("username_red");
@@ -22,7 +22,6 @@ $(document).ready(function(){
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_red");
           $("#registration_username").addClass("username_blue");
-          userNameError = '';
         }else {
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_blue");
@@ -36,8 +35,6 @@ $(document).ready(function(){
       $("#registration_username").addClass("username_red");
       userNameError = 'Invalid characters';
     }
-    $('[data-name="username"]').attr('data-original-title', userNameError);
-    $('[data-name="username"]').tooltip('fixTitle');
   }
 
   var emailError;
@@ -71,8 +68,7 @@ $(document).ready(function(){
       $("#registration_email").addClass("email_red");
       emailError = 'Not a valid email';
     }
-    $('[data-name="email"]').attr('data-original-title', emailError);
-    $('[data-name="email"]').tooltip('fixTitle');
+
   }
 
   var passwordError;
@@ -121,6 +117,12 @@ $(document).ready(function(){
     checkPassword();
   });
 
+  function setError(input, message){
+    var tooltip = '[data-name="'+ input + '"]';
+    $(tooltip).attr('data-original-title', message);
+    $(tooltip).tooltip('fixTitle');
+  }
+
   $('#register').on('click', function(){
     var username = window.btoa($('#registration_username').val());
     var password = window.btoa($('#registration').val());
@@ -130,8 +132,15 @@ $(document).ready(function(){
       });
       window.location.href='/registration/facebook';
     }else {
-
+      setError("email", emailError);
+      setError("password", passwordError);
+      setError("username", userNameError);
       $('[data-toggle="tooltip"]').tooltip('show');
+      setTimeout(function() {
+        setError("email", "");
+        setError("password", "");
+        setError("username", "");
+      }, 5000);
     }
   });
 });
