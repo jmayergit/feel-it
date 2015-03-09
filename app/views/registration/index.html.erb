@@ -1,65 +1,75 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <p></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <p class="text-center">
-        <%= image_tag("/assets/logo.png") %>
-      </p>
-      <p class="text-center" id="welcome">
-        Welcome! Join Feelit now
-      </p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4">
-    </div>
-    <div class="col-md-4">
-      <center>
-        <div class="form group">
-          <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "Username", :autocomplete => "off" %>
+<html>
+  <head>
+    <title>Feelit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <p></p>
         </div>
-        <p></p>
-        <div class="form group">
-          <%= password_field_tag :registration, :password, class: "field form-control password_white", :placeholder => "Password" %>
-        </div>
-        <p></p>
-        <div class="form group">
-          <%= text_field :registration, :email, class: "field form-control email_white", :placeholder =>"Email", :autocomplete => "off"%>
-        </div>
-        <p></p>
-        <center>
-        <div class="tos">
-          <p>By registering I agree to the</p>
-          <p><strong>Terms of Service</strong> and <strong><a href="http://feelit.co/privacy">Privacy Policy</a></strong></p>
-        </div>
-        </center>
-        <div class="form group">
-          <%= submit_tag "Register", id: "register"%>
-        </div>
-        <center><div class="hr"><hr /></div></center>
-
-      </center>
-
-        <center>
-          <p class="copyright">
-          2015 © Feelit, Inc. All rights reserved.
-        </p>
-        </center>
-    </center>
-      <div id="app_buttons">
-        <center>
-          <p><%= link_to image_tag("/assets/ios-button.png", :class => "img-responsive", id:"ios"), "https://itunes.apple.com/us/app/feelit/id684671984?mt=8" %>
-            <%= link_to image_tag("/assets/android-button.png", :class => "img-responsive", id:"android"), "https://play.google.com/store/apps/details?id=com.feelit.feelit" %>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-center">
+            <%= image_tag("/assets/logo.png") %>
           </p>
+          <p class="text-center" id="welcome">
+            Welcome! Join Feelit now
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <center>
+            <div class="form group">
+              <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "Username", :autocomplete => "off" %>
+            </div>
+            <p></p>
+            <div class="form group">
+              <%= password_field_tag :registration, :password, class: "field form-control password_white", :placeholder => "Password" %>
+            </div>
+            <p></p>
+            <div class="form group">
+              <%= text_field :registration, :email, class: "field form-control email_white", :placeholder =>"Email", :autocomplete => "off"%>
+            </div>
+            <p></p>
+            <center>
+            <div class="tos">
+              <p>By registering I agree to the</p>
+              <p><strong>Terms of Service</strong> and <strong><a href="http://feelit.co/privacy">Privacy Policy</a></strong></p>
+            </div>
+            </center>
+            <div class="form group">
+              <%= submit_tag "Register", id: "register"%>
+            </div>
+            <center><div class="hr"><hr /></div></center>
+
+          </center>
+
+            <center>
+              <p class="copyright">
+              2015 © Feelit, Inc. All rights reserved.
+            </p>
+            </center>
         </center>
+          <div id="app_buttons">
+            <center>
+              <p><%= link_to image_tag("/assets/ios-button.png", :class => "img-responsive", id:"ios"), "https://itunes.apple.com/us/app/feelit/id684671984?mt=8" %>
+                <%= link_to image_tag("/assets/android-button.png", :class => "img-responsive", id:"android"), "https://play.google.com/store/apps/details?id=com.feelit.feelit" %>
+              </p>
+            </center>
+          </div>
+        </div>
+        <div class="col-md-4">
+        </div>
       </div>
     </div>
-    <div class="col-md-4">
-    </div>
-  </div>
-</div>
+
+  </body>
+</html>
