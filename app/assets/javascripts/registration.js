@@ -1,7 +1,8 @@
 $(document).ready(function(){
-  
+
   function checkUsername(){
     var username = $('#registration_username').val();
+    var userLength = username.length;
     var re = /^[\w_]+[\w._]*[\w_]$/;
     if (username === ""){
       $("#registration_username").removeClass("username_blue");
@@ -11,7 +12,7 @@ $(document).ready(function(){
       var enc_username = window.btoa(username);
       $.ajax("/middleman/?username=" + enc_username).done(function(response){
         var registered = response["isRegistered"];
-        if(registered === 0){
+        if(registered === 0 && userLength <= 15){
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_red");
           $("#registration_username").addClass("username_blue");
@@ -79,6 +80,7 @@ $(document).ready(function(){
     }
   }
 
+
   $("#registration_email").on ('blur', function(){
     checkEmail();
   });
@@ -86,7 +88,6 @@ $(document).ready(function(){
   $("#registration_username").on ('blur', function(){
     checkUsername();
   });
-
 
   $("#registration").on('blur', function(){
     checkPassword();
