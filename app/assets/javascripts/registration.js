@@ -1,8 +1,7 @@
 $(document).ready(function(){
-  
-  $('[data-toggle="tooltip"]').tooltip();
 
   function checkUsername(){
+    $('[data-toggle="tooltip"]').tooltip('show');
     var username = $('#registration_username').val();
     var userLength = username.length;
     var re = /^[\w_]+[\w._]*[\w_]$/;
