@@ -1,19 +1,13 @@
 
 <script>
   function statusChangeCallback(response) {
-    console.log(response);
     var status = response["status"]
     if(status === "connected") {
-      console.log("Happy Path");
-      // send request to controller
-
       $.ajax({
         type: "POST",
         url: "/registration/facebook",
         data: {authData: response["authResponse"]},
         success: function(data, textStatus, jqXHR){
-          console.log("sucessful yessful nosome woesome");
-          console.log(data);
           var isValid = data["isValid"]
           if(isValid === '0') {
             window.location.href=('/registration/already_linked')
@@ -23,21 +17,19 @@
         }
       })
     }else if(status === "not_authorized") {
-      console.log("You are logged into FB but not our app son! Get yo self some koin.");
-      console.log("Loggin in..");
       FB.login(function(response){
-        console.log("We are a go Houston.");
-        console.log(response);
         statusChangeCallback(response);
       });
     }else if(status === "unknown") {
-      console.log("Shit fire, we dunno wut 2 dew w/ u");
-      console.log("Flash message: Not logged into FB, what do?");
       FB.login(function(response) {
-        console.log("Houston we need to make an air filter hmfsicbtih");
-        console.log(response);
       });
     };
+  }
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
   }
 
   window.fbAsyncInit = function() {
@@ -46,14 +38,6 @@
       xfbml      : true,
       version    : 'v2.1'
     });
-
-    $('#fb').on('click', function() {
-      console.log("click");
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-    })
-
   };
 
   (function(d, s, id){
@@ -96,6 +80,8 @@
     </div>
     <div class="col-md-4">
       <center>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
         <p><%= link_to image_tag("/assets/facebook_button.png", :class => "img-responsive", id:"fb") %>
         <p class="text-center" id="or_use_now">
           Or start using Feelit now:
