@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  
   function checkUsername(){
     var username = $('#registration_username').val();
     var re = /^[\w_]+[\w._]*[\w_]$/;
