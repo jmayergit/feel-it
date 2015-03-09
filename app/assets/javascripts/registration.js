@@ -22,6 +22,7 @@ $(document).ready(function(){
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_red");
           $("#registration_username").addClass("username_blue");
+          userNameError = "";
         }else {
           $("#registration_username").removeClass("username_white");
           $("#registration_username").removeClass("username_blue");
@@ -135,6 +136,7 @@ $(document).ready(function(){
       setError("email", emailError);
       setError("password", passwordError);
       setError("username", userNameError);
+      console.log(userNameError);
       $('[data-toggle="tooltip"]').tooltip('show');
       setTimeout(function() {
         setError("email", "");
