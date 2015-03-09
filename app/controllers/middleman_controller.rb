@@ -1,4 +1,3 @@
-require 'pry'
 class MiddlemanController < ApplicationController
 
   def load
@@ -28,7 +27,7 @@ class MiddlemanController < ApplicationController
     response = RestClient.post "http://gfeelitdev.elasticbeanstalk.com/registeruser/", {:email => email, :password => password, :username => username}
     @result = JSON.parse(response.body)
       cookies[:access_key] = @result["access_key"]
-      cookies[:user_id] = @result["id"]
+      cookies[:user_id] = @result["user_id"]
     redirect_to facebook_path
   end
 

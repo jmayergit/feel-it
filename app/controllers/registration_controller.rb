@@ -5,13 +5,25 @@ class RegistrationController < ApplicationController
 
   def index
     if params[:r]
-      @username = params[:r]
+      cookies[:ref_username] = params[:r]
     end
   end
 
   def facebook
-    @access = cookies[:access_key]
-    @user_id = cookies[:user_id]
+    if request.post?
+      # facebook info
+      authData = params["authData"]
+      facebookId = Base64.encode64(authData["userID"])
+      # registration info
+      accessKey = Base64.encode64(cookies["access_key"])
+      userId = Base64.encode64(cookies["user_id"])
+      refUsername = Base64.encode64(cookies["ref_username"])
+      # query linkfbid service
+      response = RestClient.post "http://gfeelitdev.elasticbeanstalk.com/linkfacebookid/", { user_id: userId, access_key: accessKey, facebookId: facebookId, ref_username: "ZGF2aWRkYW5n"}
+      json = JSON.parse(response)
+      render json: json
+    else
+    end
   end
 
 end
