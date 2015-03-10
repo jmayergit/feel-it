@@ -136,7 +136,6 @@ $(document).ready(function(){
       setError("email", emailError);
       setError("password", passwordError);
       setError("username", userNameError);
-      console.log(userNameError);
       $('[data-toggle="tooltip"]').tooltip('show');
       setTimeout(function() {
         setError("email", "");

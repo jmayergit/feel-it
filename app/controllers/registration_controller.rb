@@ -2,6 +2,7 @@ class RegistrationController < ApplicationController
   require 'rest-client'
   require 'json'
   require 'base64'
+  require 'pry'
 
   def index
     if params[:r]
@@ -10,6 +11,12 @@ class RegistrationController < ApplicationController
   end
 
   def facebook
+    if cookies["access_key"] === nil
+      redirect_to root_path
+    end
+    if cookies["user_id"] === nil
+      redirect_to root_path
+    end
     if request.post?
       # facebook info
       authData = params["authData"]
