@@ -38,6 +38,14 @@
       xfbml      : true,
       version    : 'v2.1'
     });
+
+
+    $('#fb').on('click', function() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    })
+
   };
 
   (function(d, s, id){
@@ -80,7 +88,8 @@
     </div>
     <div class="col-md-4">
       <center>
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        <fb:login-button scope="public_profile,email" data-size="xlarge" onlogin="checkLoginState();">
+        Link Facebook Account
         </fb:login-button>
         <p><%= link_to image_tag("/assets/facebook_button.png", :class => "img-responsive", id:"fb") %>
         <p class="text-center" id="or_use_now">

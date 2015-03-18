@@ -21,15 +21,19 @@
     <div class="col-md-4">
       <center>
         <div class="form group">
-          <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "Username", :autocomplete => "off", :data => {:toggle => "tooltip", :placement => "right", :title =>"Tooltip on right"} %>
+
+          <%= text_field :registration, :username, class: "field form-control username_white", :placeholder => "Username", :autocomplete => "off",
+          :data => {:toggle => "tooltip", :placement => "right", :title =>"", :name => "username"} %>
         </div>
         <p></p>
         <div class="form group">
-          <%= password_field_tag :registration, :password, class: "field form-control password_white", :placeholder => "Password" %>
+          <%= password_field_tag :registration, :password, class: "field form-control password_white", :placeholder => "Password",
+          :data => {:toggle => "tooltip", :placement => "right", :title =>"", :name => "password"} %>
         </div>
         <p></p>
         <div class="form group">
-          <%= text_field :registration, :email, class: "field form-control email_white", :placeholder =>"Email", :autocomplete => "off"%>
+          <%= text_field :registration, :email, class: "field form-control email_white", :placeholder =>"Email", :autocomplete => "off",
+          :data => {:toggle => "tooltip", :placement => "right", :title =>"", :name => "email"}%>
         </div>
         <p></p>
         <center>
