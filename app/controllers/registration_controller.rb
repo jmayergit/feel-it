@@ -10,10 +10,7 @@ class RegistrationController < ApplicationController
   end
 
   def facebook
-    if cookies["access_key"] === nil
-      redirect_to root_path
-    end
-    if cookies["user_id"] === nil
+    if cookies["access_key"] === nil || cookies["user_id"] === nil
       redirect_to root_path
     end
     if request.post?
