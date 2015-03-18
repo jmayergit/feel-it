@@ -2,7 +2,6 @@ class RegistrationController < ApplicationController
   require 'rest-client'
   require 'json'
   require 'base64'
-  require 'pry'
 
   def index
     if params[:r]
