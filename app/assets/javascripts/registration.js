@@ -1,39 +1,78 @@
 $(document).ready(function(){
 
   var userNameError;
+
+  function mrWhite () {
+    $("#registration_username").removeClass("username_blue");
+    $("#registration_username").removeClass("username_red");
+    $("#registration_username").addClass("username_white");
+  }
+
+  function mrBlue () {
+    $("#registration_username").removeClass("username_white");
+    $("#registration_username").removeClass("username_red");
+    $("#registration_username").addClass("username_blue");
+  }
+
+  function mrRed () {
+    $("#registration_username").removeClass("username_white");
+    $("#registration_username").removeClass("username_blue");
+    $("#registration_username").addClass("username_red");
+  }
+
+  function emailWhite () {
+    $("#registration_email").removeClass("email_blue");
+    $("#registration_email").removeClass("email_red");
+    $("#registration_email").addClass("email_white");
+  }
+
+  function emailBlue () {
+    $("#registration_email").removeClass("email_white");
+    $("#registration_email").removeClass("email_red");
+    $("#registration_email").addClass("email_blue");
+  }
+
+  function emailRed () {
+    $("#registration_email").removeClass("email_white");
+    $("#registration_email").removeClass("email_blue");
+    $("#registration_email").addClass("email_red");
+  }
+
+  function whitePassword () {
+
+  }
+
+  function bluePassword () {
+
+  }
+
+  function redPassword () {
+
+  }
+
   function checkUsername(){
     var username = $('#registration_username').val();
     var re = /^[\w_]+[\w._]*[\w_]$/;
     if (username === ""){
-      $("#registration_username").removeClass("username_blue");
-      $("#registration_username").removeClass("username_red");
-      $("#registration_username").addClass("username_white");
+      mrWhite();
       userNameError= 'Please enter a Username';
     } else if(username.length > 15) {
-      $("#registration_username").removeClass("username_white");
-      $("#registration_username").removeClass("username_blue");
-      $("#registration_username").addClass("username_red");
+      mrRed();
       userNameError= 'Must be less than 16 characters';
     } else if (re.test(username)){
       var enc_username = window.btoa(username);
       $.ajax("/middleman/?username=" + enc_username).done(function(response){
         var registered = response["isRegistered"];
         if(registered === 0){
-          $("#registration_username").removeClass("username_white");
-          $("#registration_username").removeClass("username_red");
-          $("#registration_username").addClass("username_blue");
+          mrBlue();
           userNameError = "";
         }else {
-          $("#registration_username").removeClass("username_white");
-          $("#registration_username").removeClass("username_blue");
-          $("#registration_username").addClass("username_red");
+          mrRed();
           userNameError = 'Username is already taken';
         }
       });
     } else {
-      $("#registration_username").removeClass("username_white");
-      $("#registration_username").removeClass("username_blue");
-      $("#registration_username").addClass("username_red");
+      mrRed();
       userNameError = 'Invalid characters';
     }
   }
@@ -43,30 +82,22 @@ $(document).ready(function(){
     var email = $('#registration_email').val();
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (email === ""){
-      $("#registration_email").removeClass("email_blue");
-      $("#registration_email").removeClass("email_red");
-      $("#registration_email").addClass("email_white");
+      emailWhite();
       emailError = 'Please enter an email';
     }else if(re.test(email)){
       var enc_email = window.btoa(email);
       $.ajax("/middleman/?email=" + enc_email).done(function(response){
         var registered = response["isRegistered"];
         if(registered === 0){
-          $("#registration_email").removeClass("email_white");
-          $("#registration_email").removeClass("email_red");
-          $("#registration_email").addClass("email_blue");
+          emailBlue();
           emailError = '';
         }else {
-          $("#registration_email").removeClass("email_white");
-          $("#registration_email").removeClass("email_blue");
-          $("#registration_email").addClass("email_red");
+          emailRed();
           emailError = 'Email is already registered';
         }
       });
     }else {
-      $("#registration_email").removeClass("email_white");
-      $("#registration_email").removeClass("email_blue");
-      $("#registration_email").addClass("email_red");
+      emailRed();
       emailError = 'Not a valid email';
     }
 
